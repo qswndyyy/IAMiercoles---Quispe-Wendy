@@ -27,6 +27,9 @@ def configurar_pagina():
         options=MODELOS,
         index=0
     )
+    if st.sidebar.button(" Borrar historial"):
+        st.session_state.mensajes = []   # limpia los mensajes
+        st.rerun()  
     return elegirModelo
 
 
