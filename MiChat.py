@@ -94,7 +94,9 @@ def main():
 
         if chat_completo:
             with st.chat_message("assistant", avatar="🤖"):
-                respuesta_completa = st.write_stream(generar_respuestas(chat_completo))
+                with st.spinner("Pensando..."):
+                    respuesta_completa = st.write_stream(generar_respuestas(chat_completo))
+
                 actualizar_historial("assistant", respuesta_completa, "🤖")
                 st.rerun()
 
